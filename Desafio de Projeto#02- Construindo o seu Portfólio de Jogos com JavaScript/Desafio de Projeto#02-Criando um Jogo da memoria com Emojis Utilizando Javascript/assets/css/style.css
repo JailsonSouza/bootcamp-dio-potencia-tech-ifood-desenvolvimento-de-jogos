@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+body {
+    background-color: #A4E8FD;
+    user-select: none;
+    display: flex;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: auto; 
+    padding: 5rem;
+    background: linear-gradient(325deg, #025194 10%, #007CBE 40%, #009CDE 70%,  #01CCF7 100%);
+    max-width: 50rem;
+    text-align: center;
+    align-items: center;
+}
+
+main {
+    margin: 1rem 0; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+    transform-style: preserve-3d;
+    justify-content: center;
+}
+
+h2 {
+    letter-spacing: 0.5rem;
+    color: #fff;
+    font-size: 2.625rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+button {
+    padding: 1rem; 
+    font-size: 1.125rem; 
+    font-weight: 400;
+    cursor: pointer;
+    width: 100%;
+}
+
+.item {
+    position: relative;
+    width: 8.125rem; 
+    height: 7.5rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-size: 2.5rem; 
+    transform: rotateY(180deg);
+    transition: 0.4s;
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #404040;
+    opacity: 1;
+    transition: 0.18s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+}
+
+.item .cartaAberta {
+    transform: rotateY(0deg);
+}
+
+.cartaAberta::after, .cartaCorrespondente::after {
+    transform: rotateY(180deg);
+}
+
+.mensagem-vitoria {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 999;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+    section {
+        margin: 0.5rem; 
+        padding: 3rem; 
+    }
+
+    h2 {
+        font-size: 2rem; 
+    }
+
+    button {
+        padding: 0.75rem; 
+        font-size: 1rem; 
+    }
+
+    .item {
+        width: 6rem; 
+        height: 5.625rem; 
+        font-size: 1.5rem; 
+    }
+}

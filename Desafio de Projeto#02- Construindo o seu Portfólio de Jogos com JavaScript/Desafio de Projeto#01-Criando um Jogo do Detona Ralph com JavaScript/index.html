@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Detona Ralph</title>
+    <!--- Importação do CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <menu>
+        <div class="score">
+            <h2 class="name">YOUR SCORE:</h2>
+            <h2 id="punctuation">0</h2>
+        </div>
+        <div class="time">
+            <h2 class="name">TIME LEFT:</h2>
+            <h2 id="timer">60</h2>
+        </div>
+        <div class="life">
+            <h2><img src="assets/imgs/player.png" alt="player"></h2>
+            <h2><span>X</span><span id="life">5</span></h2>
+        </div>
+    </menu>
+    <div class="separator"></div>
+    <main>
+        <table>
+            <tbody>
+              <tr id="linha01">
+                <td class="box" id="1"></td>
+                <td class="box" id="2" ></td>
+                <td class="box" id="3"></td>
+              </tr>
+              <tr id="linha02">
+                <td class="box" id="4"></td>
+                <td class="box ralph" id="5"></td>
+                <td class="box" id="6"></td>
+              </tr>
+              <tr id="linha03">
+                <td class="box" id="7"></td>
+                <td class="box" id="8"></td>
+                <td class="box" id="9"></td>
+              </tr>
+            </tbody>
+          </table>
+    </main>
+    <!--- Importação do JS -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
