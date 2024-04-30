@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lilita+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Hind", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Estilos para o corpo da página */
+body {
+    display: inline-block;
+    height: 100vh;
+    width: 100%;
+    padding: 2% 10%;
+}
+
+/* Estilos para o piano virtual */
+.piano__virtual {
+    background-color: #000000;
+    border-radius: 30px;
+    color: #fff;
+    padding: 2%;
+    width: 80%;
+    height: auto;
+}
+
+/* Estilos para o cabeçalho do piano virtual */
+.piano__virtual__cabecalho {
+    vertical-align: text-bottom;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilos para o título do cabeçalho */
+.piano__virtual__cabecalho__titulo {
+    font-size: 42px;
+    font-weight: 600;
+}
+
+/* Estilos para o controle de volume do cabeçalho */
+.piano__virtual__cabecalho__volume {
+    justify-content: center;
+    font-size: 24px;
+    accent-color: #fff;
+}
+
+/* Estilos para os botões do cabeçalho */
+.piano__virtual__cabecalho__botao {
+    font-size: 24px;
+}
+.piano__virtual__cabecalho__botao input {
+    font-size: 24px;
+    width: 60px;
+    height: 30px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.piano__virtual__cabecalho__botao input::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    border-radius: inherit;
+    top: 50%;
+    left: 0.3rem;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    
+}
+
+.piano__virtual__cabecalho__botao input:checked::before {
+    left: 2.1rem;
+    background-color: #000;
+}
+
+/* Estilos para as teclas do piano virtual */
+.piano__virtual__teclas {
+    user-select: none;
+    cursor: pointer;
+    max-width: 100%;
+    width: 100%;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para as teclas brancas */
+.piano__virtual__teclas_tecla_white {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    height: 260px;
+    width: 85px;
+    background-color: #fff;
+    border-radius: 10px;
+    background: #fff;
+    color: #000;
+}
+
+.piano__virtual__teclas_tecla_white:active {
+    box-shadow: inset -6px 6px 22px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff 0%, #eee 100%);
+}
+/* Estilos para as teclas pretas */
+.piano__virtual__teclas_tecla_black {
+    display: inline-block;
+    border-radius: 0px 0px 5px 5px;
+    margin: 0px -42px 0px -35px;
+    padding: 15px;
+    height: 180px;
+    width: 60px;
+    color: #fff;
+    background: linear-gradient(#222 15%, #000 85%);
+    text-align: center;
+    z-index: 2;
+}
+
+.piano__virtual__teclas_tecla_black:active {
+    box-shadow: inset -16px -16px 26px  rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to bottom #000 0%, #222 100%);
+}
+
