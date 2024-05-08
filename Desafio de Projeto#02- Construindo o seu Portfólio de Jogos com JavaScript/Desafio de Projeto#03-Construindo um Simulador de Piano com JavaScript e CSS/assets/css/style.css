@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lilita+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: "Hind", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    display: inline-block;
+    height: 100vh;
+    width: 100%;
+    padding: 2% 10%;
+}
+
+.piano__virtual {
+    background-color: #000000;
+    border-radius: 30px;
+    color: #fff;
+    padding: 2%;
+    width: 80%;
+    height: auto;
+}
+
+.piano__virtual__cabecalho {
+    display: flex;
+    gap: 80px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    
+}
+
+.piano__virtual__cabecalho__titulo {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.piano__virtual__cabecalho__volume {
+    justify-content: center;
+    accent-color: #fff;
+    
+}
+ 
+.piano__virtual__cabecalho__botao span {
+    margin-right: 15px;
+    vertical-align: 5px;
+}
+.piano__virtual__cabecalho__botao input {
+    width: 60px;
+    height: 35px;
+    appearance: none;
+    border-radius: 30px;
+    background-color: #1C1C1C;
+    cursor: pointer;
+    position: relative;
+}
+
+.piano__virtual__cabecalho__botao input::before {
+    content: "";
+    height: 25px;
+    width: 25px;
+    background-color: #A0A19B;
+    border-radius: inherit;
+    top: 50%;
+    left: 0.2rem;
+    position: absolute;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    left: 2.0rem;
+    background-color: #fff;
+    
+}
+
+.piano__virtual__cabecalho__botao input:checked::before {
+    background-color: #A0A19B;
+    left: 0.2rem;
+}
+
+.piano__virtual__teclas {
+    justify-content: center;
+    margin-bottom: 40px;
+    user-select: none;
+    margin-top: 40px;
+    max-width: 100%;
+    cursor: pointer;
+    width: 100%;
+    gap: 10px;
+    display: flex;
+
+}
+
+.piano__virtual__teclas .white {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    height: 260px;
+    width: 85px;
+    background-color: #fff;
+    border-radius: 10px;
+    background: #fff;
+    color: #000;
+    line-height: 420px;
+}
+
+.piano__virtual__teclas .white.active {
+    box-shadow: inset -6px 6px 22px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom #fff 10%, #eee 90%);
+}
+
+.piano__virtual__teclas .black {
+    display: inline-block;
+    border-radius: 0px 0px 5px 5px;
+    margin: 0px -42px 0px -35px;
+    padding: 15px;
+    height: 175px;
+    width: 60px;
+    color: #fff;
+    background: linear-gradient(#222 5%, #000 95%);
+    text-align: center;
+    line-height: 250px;
+    z-index: 2;
+}
+
+.piano__virtual__teclas .black.active {
+    box-shadow: inset -6px 4px 8px 4px rgba(255, 255, 255, 0.06);
+    background: linear-gradient(to bottom #000 0%, #8c8c8c 100%);
+}
+
+.piano__virtual__teclas .hide span {
+    display: none;
+}
