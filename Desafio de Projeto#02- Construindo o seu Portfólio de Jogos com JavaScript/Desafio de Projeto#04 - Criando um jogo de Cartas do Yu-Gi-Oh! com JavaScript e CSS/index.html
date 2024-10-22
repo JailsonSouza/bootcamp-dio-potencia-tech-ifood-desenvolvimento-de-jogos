@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Yu-GI-OH</title>
+    <!--Chamada dos arquivos CSS -->
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/buttons.css">
+    <link rel="stylesheet" href="src/styles/containers_and_frames.css">
+    <!--Chamada das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./src/assets/favicon/Favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!--Música de fundo do jogo -->
+    <audio id="bgm" loop>
+        <source src="src/assets/audios/egyptian_duel.mp3" type="audio/mp3">
+    </audio>
+    <main class="content">
+        <div class="content__background">
+            <!--Vídeo de background -->
+            <video class="content__background__video" autoplay muted loop>
+                <source src="src/assets/video/yugi.mp4" type="video/mp4">
+            </video>
+        </div>
+        <section class="content__section__left framed-golden-2">
+            <div class="content__section__left__score box__border frame">
+                <span class="content__section__left__score__points">Win: <span id="score-player">0</span> | Lose: <span id="score-computer">0</span></span>
+            </div>
+            <div class="content__section__left__letter">
+                <img id="card-image" style="height: 180px; width: 125px; visibility: hidden;">
+            </div>
+            <div class="content__section__left__details-letter box__border">
+                <p id="card-name">Selecione</p>
+                <p id="card-type">uma carta</p>
+            </div>
+        </section>
+        
+        <section class="content__section__right">
+            <div class="content__section__right__cards">
+                <div class="content__section__right__cards__box framed" id="computer-cards">
+                    <!--CARTAS AQUI DO ADSERSÁRIO-->
+                    
+                </div>
+                <div class="content__section__right__cards__duel">
+                    <!--CARTAS EM DISPUTA AQUI-->
+                    <div class="content__section__right__cards__duel__computer"><img id="player-field-card"></div>
+                    <img src="/src/assets/icons/millenium2.png" alt="Image Card Duel" class="content__section__right__cards__duel__image">
+                    <div class="content__section__right__cards__duel__player"><img id="computer-field-card"></div>
+                </div>
+                <div class="dueling-field-message">
+                    <button id="next-duel" class="rpgui-button" onclick="resetDuel()">GANHOU</button>
+                </div>
+                <div class="content__section__right__cards__box framed" id="player-cards">
+                    <!--CARTAS AQUI DO JOGADOR -->
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Chamada do arquivo JavaScript -->
+    <script src="src/scripts/engine.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+:root {
+    --cursor-default: url("../assets/cursor/yugicursor.png"), default;
+    --cursor-hover: url("../assets/cursor/yamiyugicursorGLOW.png"), auto;
+    --background-color: #fff;
+    --border-color: #fff;
+    --border-radius: 0.5rem; 
+    --transition-duration: 0.2s;
+}
+
+body {
+    cursor: var(--cursor-default);
+}
+
+button, a, img:hover, button:hover, a:hover {
+    cursor: var(--cursor-hover);
+}
+
+.content {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    display: flex;
+}
+
+.content__background {
+    position: absolute;
+    z-index: -2;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: right;
+}
+
+.content__background::after {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    content: "";
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.85)50%, rgba(0, 0, 0, 0.9) 100%);
+}
+
+.content__background__video {
+    height: 100vh;
+}
+
+.content__section__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 6.25rem;
+}
+
+.box__border {
+    border: 3px solid #000;
+    border-radius: var(--border-radius);
+}
+
+.content__section__left {
+    width: 34rem; 
+    min-width: 15.625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.content__section__left__score {
+    background-color: var(--background-color);
+    padding: 2rem 0.8rem;
+    text-align: center;
+    width: 80%;
+    margin-top: 3.125rem;
+}
+
+.content__section__left__details-letter {
+    width: 100%;
+    height: 6rem;
+    padding: 1rem;
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+#card-name, #card-type {
+    font-size: 1rem;
+    padding: 0.25rem;
+}
+
+#player-field-card, #computer-field-card {
+    height: 11.25rem;
+    width: 7.8125rem;
+}
+
+.content__section__right {
+    width: 84rem;
+}
+
+.content__section__right__cards {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.1875rem 0;
+}
+
+.content__section__right__cards__duel {
+    display: flex;
+    justify-content: center;
+}
+
+.content__section__right__cards__duel__image {
+    margin-top: 3.125rem;
+    height: 6.25rem;
+}
+
+.content__section__right__cards__duel, .content__section__right__cards__box {
+    height: 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content__section__right__cards__duel__player, .content__section__right__cards__duel__computer {
+    border: 1px solid var(--border-color);;
+    border-radius: var(--border-radius); 
+    height: 11.2rem;
+    width: 8rem;
+}
+
+.dueling-field-message {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+}
+
+#next-duel {
+    display: none;
+}
+
+.card {
+    transition: transform var(--transition-duration);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 48rem) { /* 768px */
+    .content {
+        flex-direction: column;
+    }
+    
+    .content__section__left,
+    .content__section__right {
+        width: 100%;
+    }
+
+    .content__section__left__score,
+    .content__section__left__details-letter {
+        width: 90%;
+    }
+
+    #player-field-card, #computer-field-card {
+        height: 10rem;
+        width: 6rem;
+    }
+}
+
+@media (max-width: 30rem) { /* 480px */
+    #card-name, #card-type {
+        font-size: 0.8rem;
+    }
+
+    .content__section__right__cards__duel, .content__section__right__cards__box {
+        flex-direction: column;
+    }
+}
